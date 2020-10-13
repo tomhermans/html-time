@@ -7,8 +7,8 @@ module.exports = function (data) {
 	now.setTime(now.getTime() + 30000); // the build takes about 30 seconds... let's add a little buffer.
 
 	let hue = 15 * now.getHours() - 90;
-	let sat = (12 - Math.abs(12 - now.getHours() / 2) + 2) * 2.5 + 30;
-	let lig = (12 - Math.abs(12 - now.getHours() / 2) + 2) * 2.5 + 20;
+	let sat = (12 - Math.abs(12 - (now.getHours() + 2) / 2)) * 2.5 + 30;
+	let lig = (12 - Math.abs(12 - (now.getHours() + 2) / 2)) * 2.5 + 20;
 
 	console.log(hue, sat, lig, now.getHours(), now.getMinutes());
 	let clr =
