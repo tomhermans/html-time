@@ -6,10 +6,10 @@ module.exports = function (data) {
 	let now = new Date();
 	now.setTime(now.getTime() + 30000); // the build takes about 30 seconds... let's add a little buffer.
 
-	let hue = 15 * now.getHours() - 105;
-	let sat = now.getHours() * 5 + 20;
-	let lig = now.getHours() * 5 + 20;
-	console.log(hue, now.getHours(), now.getMinutes());
+	let hue = 15 * now.getHours() - 90;
+	let sat = now.getHours() * 2.5 + 20;
+	let lig = now.getHours() * 2.5 + 20;
+	console.log(hue, sat, lig, now.getHours(), now.getMinutes());
 	let clr =
 		"<style>:root, html, body {--bg: hsl(" +
 		hue +
@@ -18,6 +18,7 @@ module.exports = function (data) {
 		"%, " +
 		lig +
 		"%) }</style>";
+	console.log(clr);
 
 	return clr;
 };
