@@ -6,25 +6,18 @@ module.exports = function (data) {
 	let now = new Date();
 	now.setTime(now.getTime() + 30000); // the build takes about 30 seconds... let's add a little buffer.
 
-	let hue = 15 * now.getHours() - 120;
+	let hue = 15 * now.getHours() - 105;
+	let sat = (now.getHours() * 5 + 20) * 1%;
+  let lig = (now.getHours() * 5 + 20) * 1 %;
 	console.log(hue, now.getHours(), now.getMinutes());
 	let clr =
-		"<style>:root, html, body {--bg: hsl(" + hue + ",60%, 60%) }</style>";
-	// let time = now.toLocaleString(locale, {
-	// 	timeZone: data.location,
-	// 	hour: "numeric",
-	// 	minute: "numeric",
-	// });
-
-	// let obj = {
-	// 	time: time,
-	// 	hue: hue,
-	// };
+		"<style>:root, html, body {--bg: hsl(" +
+		hue +
+		"," +
+		sat +
+		", " +
+		lig +
+		") }</style>";
 
 	return clr;
-	// return (time = now.toLocaleString(locale, {
-	// 	timeZone: data.location,
-	// 	hour: "numeric",
-	// 	minute: "numeric",
-	// }));
 };
