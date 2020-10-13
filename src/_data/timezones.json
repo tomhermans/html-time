@@ -1,6 +1,7 @@
 [
 	{ "location": "Pacific/Auckland", "locale": "en-NZ" },
 	{ "location": "Europe/Amsterdam", "locale": "nl-NL" },
+	{ "location": "Europe/Brussels", "locale": "nl-BE" },
 	{ "location": "Europe/Paris", "locale": "fr-FR" },
 	{ "location": "Europe/Berlin", "locale": "de-DE" },
 	{ "location": "Europe/London", "locale": "en-GB" },
