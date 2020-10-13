@@ -7,7 +7,6 @@ A ludicrous experiment triggered by a playfull tweet:
 > free side project idea: HTML-only static site generated clock that deploys a new version to @netlify every minute
 > – [@zachleat](https://twitter.com/zachleat/status/1020034115817680896)
 
-
 ## What does it do?
 
 - It builds a page with the local time for a variety of timezones. (correct at build time.)
@@ -22,7 +21,6 @@ Since we can run this build so regularly and with such confidence on Netlify, we
 Possibly. But it turns out that this is a nice example of how the country-specific CDN routing is on Netlify thanks to its concise, yet powerful [`_redirects`](_redirects) API. ([docs](https://www.netlify.com/docs/redirects/?utm_source=github&utm_medium=setyourwatch-pnh&utm_campaign=devex))
 
 Have a poke around!
-
 
 ## Developing locally
 
@@ -42,12 +40,10 @@ yarn start
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/08fef174-2c11-4911-a610-19a327172024/deploy-status)](https://app.netlify.com/sites/setyourwatchby/deploys)
 
-
 ## Format for localisations
 
 Pages for different locales follow the [conventions set out on Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 
+## Build any minute via Github action workflow
 
-
-
-
+https://www.voorhoede.nl/nl/blog/scheduling-netlify-deploys-with-github-actions/
