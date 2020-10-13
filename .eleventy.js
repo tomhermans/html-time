@@ -7,7 +7,7 @@ module.exports = function (config) {
 
 	// Add some handy filters
 	config.addFilter("time", require("./filters/time.js"));
-	config.addFilter("hue", require("./filters/hue.js"));
+	config.addShortcode("hue", require("./filters/hue.js"));
 
 	config.addFilter("coloncapture", function (str) {
 		return str.replace(":", "<span>:</span>");
