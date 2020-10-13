@@ -15,9 +15,9 @@ module.exports = function (data) {
 		hue +
 		"," +
 		sat +
-		%", " +
+		"%, " +
 		lig +
-		%") }</style>";
+		"%) }</style>";
 
 	return clr;
 };
