@@ -7,4 +7,4 @@ pagination:
 permalink: /{{ zone.location }}/index.html
 keepfresh: true
 ---
-<h1 class="time">{{ zone | time | coloncapture | safe }}</h1>
+<h1 class="time {{ hue }}">{{ zone | time | coloncapture | safe }}</h1>

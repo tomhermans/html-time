@@ -1,35 +1,32 @@
 const CleanCSS = require("clean-css");
 
-module.exports = function(config) {
+module.exports = function (config) {
+	// just pass our css and redirect rules through to the dist folder
+	// config.addPassthroughCopy("src/css");
+	config.addPassthroughCopy("_redirects");
 
+	// Add some handy filters
+	config.addFilter("time", require("./filters/time.js"));
+	config.addFilter("hue", require("./filters/hue.js"));
 
-  // just pass our css and redirect rules through to the dist folder
-  // config.addPassthroughCopy("src/css");
-  config.addPassthroughCopy("_redirects");
+	config.addFilter("coloncapture", function (str) {
+		return str.replace(":", "<span>:</span>");
+	});
 
-  // Add some handy filters
-  config.addFilter("time", require("./filters/time.js") );
+	config.addFilter("cssmin", function (code) {
+		return new CleanCSS({}).minify(code).styles;
+	});
 
-  config.addFilter("coloncapture", function(str){
-    return str.replace(":","<span>:</span>");
-  });
+	return {
+		// what goes where?
+		dir: {
+			input: "src",
+			output: "dist",
+			includes: "_includes",
+		},
 
-  config.addFilter("cssmin", function(code) {
-    return new CleanCSS({}).minify(code).styles;
-  });
-
-  return {
-
-    // what goes where?
-    dir: {
-      input: "src",
-      output: "dist",
-      includes: "_includes"
-    },
-
-    // some handy options
-    templateFormats : ["njk"],
-    passthroughFileCopy: true
-
-  };
+		// some handy options
+		templateFormats: ["njk"],
+		passthroughFileCopy: true,
+	};
 };

@@ -8,18 +8,18 @@ module.exports = function (data) {
 
 	let hue = 15 * now.getHours() - 120;
 	console.log(hue, now.getHours(), now.getMinutes());
-	let time = now.toLocaleString(locale, {
-		timeZone: data.location,
-		hour: "numeric",
-		minute: "numeric",
-	});
+	// let time = now.toLocaleString(locale, {
+	// 	timeZone: data.location,
+	// 	hour: "numeric",
+	// 	minute: "numeric",
+	// });
 
-	let obj = {
-		time: time,
-		hue: hue,
-	};
+	// let obj = {
+	// 	time: time,
+	// 	hue: hue,
+	// };
 
-	return time;
+	return hue;
 	// return (time = now.toLocaleString(locale, {
 	// 	timeZone: data.location,
 	// 	hour: "numeric",
