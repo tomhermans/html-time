@@ -7,5 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger our build webhook on Netlify
-        run: curl -s -X POST "https://api.netlify.com/build_hooks/5f85939589ef6708af9ead2d"
-        
+        run: curl -X POST -d {} "https://api.netlify.com/build_hooks/5f85939589ef6708af9ead2d"
